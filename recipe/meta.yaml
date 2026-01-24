@@ -1,16 +1,16 @@
 {% set name = "XStatic-jQuery" %}
-{% set version = "3.5.1.1" %}
+{% set version = "3.7.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e0ae8f8ec5bbd28045ba4bca06767a38bd5fc27cf9b71f434589f59370dcd323
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') | lower }}-{{ version }}.tar.gz
+  sha256: f74dc463690611fe34e250953c144c56ae4ca17139e5f630378b4a988403c1e8
 
 build:
-  number: 5
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
